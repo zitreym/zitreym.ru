@@ -3,7 +3,7 @@
     <div class="skils_wrp">
     <h4 class="skils_title">Использую сейчас:</h4>
 <?
-$mysqli = new mysqli("localhost", "zitreym_zitreym", "Despxamv123", "zitreym_db");
+$mysqli = new mysqli("91.236.136.143", "zitreym_zitreym", "Despxamv123", "zitreym_db");
 $result = $mysqli->query("SELECT * FROM skils WHERE type = 1");
 $result = $result->fetch_all();
 foreach ($result as $row) {
