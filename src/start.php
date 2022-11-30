@@ -1,5 +1,6 @@
 <section class="start">
     <div class="start_img"></div>
+    <div class="start_info">
     <div class="start_header">
         <h2 class="start_hello">Привет, я</h2>
         <h1 class="start_title">Данила Баранов</h1>
@@ -9,6 +10,7 @@
         <a target="_blank" href="https://vk.com/zitreym" class="start_media_icon start_media_icon_vk"></a>
         <a target="_blank" href="https://instagram.com/zitreym" class="start_media_icon start_media_icon_inst"></a>
         <a target="_blank" href="https://t.me/zitreym" class="start_media_icon start_media_icon_tg"></a>
+    </div>
     </div>
     <div class="start_profit">
         <h4 class="start_profit_title">Чем я могу быть полезен?</h4>

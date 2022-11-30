@@ -123,6 +123,12 @@ li {
     background-size: cover;
     margin-top: 100px;
 }
+.start_info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
 .start_media_wrp {
     display: flex;
 }
