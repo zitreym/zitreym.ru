@@ -562,7 +562,6 @@ a.menu_button_login {
     margin-right: 10px;
 }
 .menu_txt {
-
     font-size: 16px;
 }
 .menu_li_last {
@@ -586,10 +585,6 @@ a.menu_button_login {
     font-size: 25px;
     line-height: 36px;
 }
-
-element.style {
-}
-@media (max-width: 1200px)
 .start_title {
     font-size: 40px;
 }
