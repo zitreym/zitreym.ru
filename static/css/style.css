@@ -522,3 +522,20 @@ a.menu_button_login {
     color: #FFFFFF;
     text-align: center;
 }
+@media (max-width: 1200px) {
+.start_title {
+    font-size: 60px;
+}
+.start_media_icon {
+    width: 60px;
+    height: 60px;
+}
+.start_profit {
+    padding: 25px 60px;
+}
+.section_title {
+    padding: 30px 60px;
+    font-size: 28px;
+    border-size: #000 solid 6px;
+}
+}
