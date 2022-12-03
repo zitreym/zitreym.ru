@@ -538,4 +538,21 @@ a.menu_button_login {
     font-size: 28px;
     border-size: #000 solid 6px;
 }
+.career_box {
+    width: 800px;
+}
+.career_company_logo::before {
+    width: 100px;
+    height: 100px;
+    background-size: 80px;
+}
+.career_text_wrp {
+    margin-left: 150px;
+}
+.career_text_title, .career_text_date, .career_text_town, .career_text {
+    font-size: 14px;
+}
+.career_box:last-child {
+    font-size: 18px;
+}
 }
