@@ -621,3 +621,23 @@ a.menu_button_login {
     line-height: 14px;
 }
 }
+@media (max-width: 800px) {
+.career_text_wrp {
+    margin-left: 110px;
+}
+.career_company_logo::before {
+    width: 70px;
+    height: 70px;
+    background-size: 70px;
+}
+.career_box:nth-child(2n+1) {
+    margin-right: 5%;
+}
+.career_box:nth-child(2n) {
+    margin-left: 5%;
+}
+.career_box {
+    width: 700px;
+    padding: 20px;
+}
+}
