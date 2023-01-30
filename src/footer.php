@@ -6,7 +6,7 @@
                 <a target="_blank" href="https://t.me/zitreym" class="footer_social_link"></a>
                 <a target="_blank" href="mailto:baranovd@ro.ru" class="footer_social_link"></a>
             </div>
-            <p class="rights">@2021-2022 Данила Баранов все права защищены.</p>
+            <p class="rights">@2021-<?php echo date("Y");?> Данила Баранов все права защищены.</p>
         </footer>
         </div>
     </body>
