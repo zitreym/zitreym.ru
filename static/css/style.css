@@ -638,4 +638,7 @@ a.menu_button_login {
     width: 700px;
     padding: 20px;
 }
+.skils_wrp {
+    justify-content: center;
+}
 }
