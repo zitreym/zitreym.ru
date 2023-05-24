@@ -1,4 +1,9 @@
 <section class="career">
+<?php
+$career = $mysqli->query("SELECT * FROM career");
+$career = $career->fetch_all();
+var_dump($career);
+?>
     <div class="career_title_wrp">
         <h3 class="section_title">Карьера</h3>
     </div>
