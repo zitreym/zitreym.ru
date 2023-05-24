@@ -128,7 +128,7 @@ li {
     align-items: center;
 }
 .start_media_wrp {
-    margin-top 30px;
+    margin-top: 30px;
     display: flex;
 }
 .start_header {
@@ -521,4 +521,124 @@ a.menu_button_login {
     line-height: 25px;
     color: #FFFFFF;
     text-align: center;
+}
+@media (max-width: 1200px) {
+.start_title {
+    font-size: 60px;
+}
+.start_media_icon {
+    width: 60px;
+    height: 60px;
+}
+.start_profit {
+    padding: 25px 60px;
+}
+.section_title {
+    padding: 30px 60px;
+    font-size: 28px;
+    border-size: #000 solid 6px;
+}
+.career_box {
+    width: 800px;
+}
+.career_company_logo::before {
+    width: 100px;
+    height: 100px;
+    background-size: 80px;
+}
+.career_text_wrp {
+    margin-left: 150px;
+}
+.career_text_title, .career_text_date, .career_text_town, .career_text {
+    font-size: 14px;
+}
+.career_box:last-child {
+    font-size: 18px;
+}
+}
+@media (max-width: 1000px) {
+.menu_li {
+    padding: 6px 20px;
+    margin-right: 10px;
+}
+.menu_txt {
+    font-size: 16px;
+}
+.menu_li_last {
+    padding: 6px 0;
+}
+.menu_txt_last {
+    padding: 8px 25px;
+}
+a.menu_button_login {
+    width: 38px;
+    height: 38px;
+    border-radius: 35px;
+    background-size: 23px;
+}
+.start_img {
+    width: 250px;
+    height: 250px;
+    margin: 80px 50px 0 50px;
+}
+.start_hello {
+    font-size: 25px;
+    line-height: 36px;
+}
+.start_title {
+    font-size: 40px;
+}
+.start_title {
+    font-size: 40px;
+    line-height: 70px;
+}
+.start_description {
+    font-size: 20px;
+    line-height: 25px;
+}
+.start_media_icon {
+    width: 45px;
+    height: 45px;
+    background-size: 25px;
+    margin-right: 20px;
+}
+.start_profit {
+    padding: 25px 60px;
+}
+.start_profit_title {
+    font-size: 24px;
+    line-height: 30px;
+}
+.start_profit_txt {
+    font-size: 14px;
+    line-height: 120%;
+    margin: 20px 0 25px;
+}
+.start_profit_button {
+    width: 160px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+}
+.career_text_wrp {
+    margin-left: 110px;
+}
+.career_company_logo::before {
+    width: 70px;
+    height: 70px;
+    background-size: 70px;
+}
+.career_box:nth-child(2n+1) {
+    margin-right: 5%;
+}
+.career_box:nth-child(2n) {
+    margin-left: 5%;
+}
+.career_box {
+    width: 700px;
+    padding: 20px;
+}
+.skils_wrp {
+    justify-content: center;
+}
 }
