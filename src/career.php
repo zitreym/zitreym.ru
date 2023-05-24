@@ -6,8 +6,22 @@
         <div class="career_box">
             <a href="#" class="career_company_logo career_company_logo_sber"></a>
             <div class="career_text_wrp">
+                <p class="career_text_title">Ведущий инженер по разработке в ПАО “Сбербанк”</p>
+                <p class="career_text_date">Апрель 2023 - по настоящее время</p>
+                <p class="career_text_town">г. Москва</p>
+                <p class="career_text"> Администрирование стендов на всех этапах разработки продукта (от теста до прома)<br>
+                Настройка nginx / proxy (деплой, установка сертификатов, Настройка параметров, траблшутинг)<br>
+                Деплой с помощью Jenkins, использование готовых job devops<br>
+                Решения задач от команд разработки<br>
+                Работа с docker, ansible, unix системы<br>
+                Использование confluence, jira (написание статей, решение задач, постановка задач, фильтры)</p>
+            </div>
+        </div>
+        <div class="career_box">
+            <a href="#" class="career_company_logo career_company_logo_sber"></a>
+            <div class="career_text_wrp">
                 <p class="career_text_title">Старший инженер по разработке в ПАО “Сбербанк”</p>
-                <p class="career_text_date">Июль 2022 - по настоящее время</p>
+                <p class="career_text_date">Июль 2022 - Март 2023</p>
                 <p class="career_text_town">г. Москва</p>
                 <p class="career_text"> Администрирование стендов на всех этапах разработки продукта (от теста до прома)<br>
                 Настройка nginx / proxy (деплой, установка сертификатов, Настройка параметров, траблшутинг)<br>
