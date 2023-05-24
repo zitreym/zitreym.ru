@@ -4,9 +4,8 @@
     </div>
     <div class="career_wrp">
 <?php
-$career = $mysqli->query("SELECT * FROM career");
+$career = $mysqli->query("SELECT * FROM career ORDER BY id DESC");
 $career = $career->fetch_all();
-var_dump($career);
 foreach ($career as $career_item) {
 ?>
         <div class="career_box">
