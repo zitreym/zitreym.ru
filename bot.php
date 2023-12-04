@@ -25,7 +25,7 @@ function sendTelegram($method, $response)
 $otvet = var_export($data, true);
 //ответ на текст
 if (!empty($data['message']['text'])) {
-	$text = $data['message']['text'];
+	$user = $data['message']['from']['id'];
  
 	if (mb_stripos($text, 'привет') !== false) {
 		sendTelegram(
@@ -38,7 +38,7 @@ if (!empty($data['message']['text'])) {
  
 		exit();	
 	} 
-    if (mb_stripos($text, '123') !== false) {
+    if (mb_stripos($user, '688790193') !== false) {
 		sendTelegram(
 			'sendMessage', 
 			array(
