@@ -26,8 +26,10 @@ function sendTelegram($method, $response)
 //переменные
 $otvet = var_export($data, true);
 $admin = 688790193;
-$user = $data['message']['from']['id'];
+$userid = $data['message']['from']['id'];
 $username = $data['message']['from']['first_name'];
+$lastname = $data['message']['from']['last_name'];
+$nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
 
 //ответ на текст
@@ -43,7 +45,7 @@ if (!empty($data['message']['text'])) {
         'sendMessage', 
         array(
             'chat_id' => $admin,
-            'text' => '' . $otvet . ''
+            'text' => 'Пользователь ' . $username . ' ' . $lastname . ' (@' . $nameid . ' -id' . $userid . ') оставил сообщение: ' . $text . ''
         )
     );
     exit();	
