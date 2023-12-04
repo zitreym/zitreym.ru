@@ -22,31 +22,48 @@ function sendTelegram($method, $response)
  
 	return $res;
 }
+
+//переменные
 $otvet = var_export($data, true);
+$admin = 688790193;
+$user = $data['message']['from']['id'];
+$username = $data['message']['from']['first_name'];
+$text = $data['message']['text'];
+
 //ответ на текст
 if (!empty($data['message']['text'])) {
-	$user = $data['message']['from']['id'];
- 
-	if (mb_stripos($text, 'привет') !== false) {
-		sendTelegram(
-			'sendMessage', 
-			array(
-				'chat_id' => $data['message']['chat']['id'],
-				'text' => 'Кристина топчик!'
-			)
-		);
- 
-		exit();	
+    sendTelegram(
+        'sendMessage', 
+        array(
+            'chat_id' => $data['message']['chat']['id'],
+            'text' => 'Привет!'
+        )
+    );
+    sendTelegram(
+        'sendMessage', 
+        array(
+            'chat_id' => $admin,
+            'text' => '' . $otvet . ''
+        )
+    );
+    exit();	
 	} 
-    if (mb_stripos($user, '688790193') !== false) {
-		sendTelegram(
-			'sendMessage', 
-			array(
-				'chat_id' => $data['message']['chat']['id'],
-				'text' => '' . $otvet . ''
-			)
-		);
- 
-		exit();	
-	} 
+if (mb_stripos($user, '688790193') !== false) {
+    sendTelegram(
+        'sendMessage', 
+        array(
+            'chat_id' => $data['message']['chat']['id'],
+            'text' => 'Админ'
+        )
+    );
+else {
+    sendTelegram(
+        'sendMessage', 
+        array(
+            'chat_id' => $data['message']['chat']['id'],
+            'text' => '' . $username . ''
+        )
+    );
 }
+    exit();	
+} 
