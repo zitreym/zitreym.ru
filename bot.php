@@ -39,7 +39,6 @@ if (!empty($data['message']['text'])) {
             'text' => 'Привет, ' . $username . ''
         )
     );
-    exit();	
     sendTelegram(
         'sendMessage', 
         array(
