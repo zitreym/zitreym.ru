@@ -22,7 +22,7 @@ function sendTelegram($method, $response)
  
 	return $res;
 }
- 
+$otvet = implode('; ', $data);
 //ответ на текст
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
@@ -32,7 +32,7 @@ if (!empty($data['message']['text'])) {
 			'sendMessage', 
 			array(
 				'chat_id' => $data['message']['chat']['id'],
-				'text' => ''. $data .''
+				'text' => ''. $otvet .''
 			)
 		);
  
