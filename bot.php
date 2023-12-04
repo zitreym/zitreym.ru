@@ -36,9 +36,10 @@ if (!empty($data['message']['text'])) {
         'sendMessage', 
         array(
             'chat_id' => $data['message']['chat']['id'],
-            'text' => 'Привет!'
+            'text' => 'Привет, ' . $username . ''
         )
     );
+    exit();	
     sendTelegram(
         'sendMessage', 
         array(
@@ -47,23 +48,4 @@ if (!empty($data['message']['text'])) {
         )
     );
     exit();	
-	} 
-if (mb_stripos($user, '688790193') !== false) {
-    sendTelegram(
-        'sendMessage', 
-        array(
-            'chat_id' => $data['message']['chat']['id'],
-            'text' => 'Админ'
-        )
-    );
-else {
-    sendTelegram(
-        'sendMessage', 
-        array(
-            'chat_id' => $data['message']['chat']['id'],
-            'text' => '' . $username . ''
-        )
-    );
 }
-    exit();	
-} 
