@@ -23,65 +23,7 @@ function sendTelegram($method, $response)
 	return $res;
 }
  
-// Прислали фото.
-if (!empty($data['message']['photo'])) {
-	$photo = array_pop($data['message']['photo']);
-	$res = sendTelegram(
-		'getFile', 
-		array(
-			'file_id' => $photo['file_id']
-		)
-	);
-	
-	$res = json_decode($res, true);
-	if ($res['ok']) {
-		$src = 'https://api.telegram.org/file/bot' . TOKEN . '/' . $res['result']['file_path'];
-		$dest = __DIR__ . '/' . time() . '-' . basename($src);
- 
-		if (copy($src, $dest)) {
-			sendTelegram(
-				'sendMessage', 
-				array(
-					'chat_id' => $data['message']['chat']['id'],
-					'text' => 'Фото сохранено'
-				)
-			);
-			
-		}
-	}
-	
-	exit();	
-}
- 
-// Прислали файл.
-if (!empty($data['message']['document'])) {
-	$res = sendTelegram(
-		'getFile', 
-		array(
-			'file_id' => $data['message']['document']['file_id']
-		)
-	);
-	
-	$res = json_decode($res, true);
-	if ($res['ok']) {
-		$src = 'https://api.telegram.org/file/bot' . TOKEN . '/' . $res['result']['file_path'];
-		$dest = __DIR__ . '/' . time() . '-' . $data['message']['document']['file_name'];
- 
-		if (copy($src, $dest)) {
-			sendTelegram(
-				'sendMessage', 
-				array(
-					'chat_id' => $data['message']['chat']['id'],
-					'text' => 'Файл сохранён'
-				)
-			);	
-		}
-	}
-	
-	exit();	
-}
- 
-// Ответ на текстовые сообщения.
+//ответ на текст
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
  
@@ -90,36 +32,10 @@ if (!empty($data['message']['text'])) {
 			'sendMessage', 
 			array(
 				'chat_id' => $data['message']['chat']['id'],
-				'text' => 'Хай!'
+				'text' => ''. $data .''
 			)
 		);
  
 		exit();	
 	} 
- 
-	// Отправка фото.
-	if (mb_stripos($text, 'фото') !== false) {
-		sendTelegram(
-			'sendPhoto', 
-			array(
-				'chat_id' => $data['message']['chat']['id'],
-				'photo' => curl_file_create(__DIR__ . '/torin.jpg')
-			)
-		);
-		
-		exit();	
-	}
- 
-	// Отправка файла.
-	if (mb_stripos($text, 'файл') !== false) {
-		sendTelegram(
-			'sendDocument', 
-			array(
-				'chat_id' => $data['message']['chat']['id'],
-				'document' => curl_file_create(__DIR__ . '/example.xls')
-			)
-		);
- 
-		exit();	
-	}
 }
