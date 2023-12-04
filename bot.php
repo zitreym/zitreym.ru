@@ -22,7 +22,7 @@ function sendTelegram($method, $response)
  
 	return $res;
 }
-$otvet = implode('; ', $data);
+$otvet = var_export($data, true);
 //ответ на текст
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
@@ -33,6 +33,17 @@ if (!empty($data['message']['text'])) {
 			array(
 				'chat_id' => $data['message']['chat']['id'],
 				'text' => 'Кристина топчик!'
+			)
+		);
+ 
+		exit();	
+	} 
+    if (mb_stripos($text, '123') !== false) {
+		sendTelegram(
+			'sendMessage', 
+			array(
+				'chat_id' => $data['message']['chat']['id'],
+				'text' => '' . $otvet . ''
 			)
 		);
  
