@@ -32,7 +32,7 @@ if (!empty($data['message']['text'])) {
 			'sendMessage', 
 			array(
 				'chat_id' => $data['message']['chat']['id'],
-				'text' => ''. $otvet .''
+				'text' => ''. var_dump($data) .''
 			)
 		);
  
