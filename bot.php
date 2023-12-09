@@ -7,7 +7,7 @@ if (empty($data['message']['chat']['id'])) {
 	exit();
 }
  
-define('TOKEN', '6933909374:AAHeBloEuYqLjkIFxedARA_77NmhyyDWehg');
+define('TOKEN', '6933909374:AAHGAiNH6kb8hovWYho_wulZrKmf22eFE_I');
  
 // Функция вызова методов API.
 function sendTelegram($method, $response)
@@ -49,4 +49,13 @@ if (!empty($data['message']['text'])) {
         )
     );
     exit();	
+}
+if ($data['message']['text'] == '/ipoteka') {
+    sendTelegram(
+        'sendMessage', 
+        array(
+            'chat_id' => $data['message']['chat']['id'],
+            'text' => 'Выбран раздел ипотека'
+        )
+    );
 }
