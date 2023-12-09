@@ -45,7 +45,7 @@ if (!empty($data['message']['text'])) {
         'sendMessage', 
         array(
             'chat_id' => $admin,
-            'text' => 'Пользователь ' . $username . ' ' . $lastname . ' (@' . $nameid . ' -id' . $userid . ') оставил сообщение: ' . $text . ''
+            'text' => 'Пользователь ' . $username . ' ' . $lastname . ' (@' . $nameid . ' -id' . $userid . ') оставил сообщение: ' . $otvet . ''
         )
     );
     exit();	
