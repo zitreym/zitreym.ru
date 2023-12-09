@@ -58,4 +58,5 @@ if ($data['message']['text'] == '/ipoteka') {
             'text' => 'Выбран раздел ипотека'
         )
     );
+    exit();	
 }
