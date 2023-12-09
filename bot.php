@@ -48,15 +48,14 @@ if (!empty($data['message']['text'])) {
             'text' => 'Пользователь ' . $username . ' ' . $lastname . ' (@' . $nameid . ' -id' . $userid . ') оставил сообщение: ' . $otvet . ''
         )
     );
+    if ($data['message']['text'] == '/ipoteka') {
+        sendTelegram(
+            'sendMessage', 
+            array(
+                'chat_id' => $data['message']['chat']['id'],
+                'text' => 'Выбран раздел ипотека'
+            )
+        );
     exit();	
 }
-if ($data['message']['text'] == '/ipoteka') {
-    sendTelegram(
-        'sendMessage', 
-        array(
-            'chat_id' => $data['message']['chat']['id'],
-            'text' => 'Выбран раздел ипотека'
-        )
-    );
-    exit();	
 }
