@@ -50,7 +50,7 @@ switch ($text) {
                             array(
                                 'text' => 'Вывести информацию',
                                 'url' => '/chet_output',
-                            )
+                            ),
                         )
                     ),
                     'one_time_keyboard' => TRUE,
@@ -76,11 +76,11 @@ switch ($text) {
                             array(
                                 'text' => 'Холодная вода',
                                 'url' => '/chet_hv',
-                            )
+                            ),
                             array(
                                 'text' => 'Электричество',
                                 'url' => '/chet_el',
-                            )
+                            ),
                         )
                     ),
                     'one_time_keyboard' => TRUE,
