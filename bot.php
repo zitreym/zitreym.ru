@@ -57,9 +57,10 @@ switch ($text) {
             'sendMessage', 
             array(
                 'chat_id' => $data['message']['chat']['id'],
+                'parse_mode' => 'HTML',
                 'text' => 'Я не знаю такую команду, попробуй ещё раз',
                 'reply_markup' => array(
-                    $default_keyboard,
+                    '[[ . '$default_keyboard' . ]]',
                     'resize_keyboard' => true
                 )
             )
