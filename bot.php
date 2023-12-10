@@ -31,7 +31,7 @@ $username = $data['message']['from']['first_name'];
 $lastname = $data['message']['from']['last_name'];
 $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
-$default_keyboard = array(
+$default_keyboard2 = array(
     array(
       'text' => 'счетчики',
       'callback_data' => '/chet'
@@ -41,7 +41,7 @@ $default_keyboard = array(
       'callback_data' => '/other'
     )
   );
-
+$default_keyboard ='{"keyboard":[[{"text":"1button","callback_data":"/about"},{"text":"2button","callback_data":"/ipoteka"},{"text":"3button","callback_data":"/contact"},{"text":"4button","callback_data":"/order"}]],"resize_keyboard":true}'
 switch ($text) {
     case 'счетчики':
         sendTelegram(
@@ -59,10 +59,7 @@ switch ($text) {
                 'chat_id' => $data['message']['chat']['id'],
                 'parse_mode' => 'HTML',
                 'text' => 'Я не знаю такую команду, попробуй ещё раз',
-                'reply_markup' => array(
-                    '[[' . $default_keyboard ']]',
-                    'resize_keyboard' => true
-                )
+                'reply_markup' => $default_keyboard
             )
         );
 }
