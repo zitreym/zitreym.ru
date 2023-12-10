@@ -31,7 +31,16 @@ $username = $data['message']['from']['first_name'];
 $lastname = $data['message']['from']['last_name'];
 $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
-
+$default_keyboard = array(
+    array(
+      'text' => 'счетчики',
+      'callback_data' => '/chet'
+    ),
+    array(
+      'text' => 'другое',
+      'callback_data' => '/other'
+    )
+  );
 
 switch ($text) {
     case 'счетчики':
@@ -50,16 +59,7 @@ switch ($text) {
                 'chat_id' => $data['message']['chat']['id'],
                 'text' => 'Я не знаю такую команду, попробуй ещё раз',
                 'reply_markup' => array(
-                    'keyboard' => array(
-                            array(
-                            'text' => 'счетчики',
-                            'callback_data' => '/chet'
-                                ),
-                                array(
-                                    'text' => 'другое',
-                                    'callback_data' => '/other'
-                                ) 
-                                ),
+                    $default_keyboard,
                     'resize_keyboard' => true
                 )
             )
