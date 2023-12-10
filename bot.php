@@ -38,7 +38,54 @@ switch ($text) {
             'sendMessage', 
             array(
                 'chat_id' => $data['message']['chat']['id'],
-                'text' => 'Вы выбрали счетчики'
+                'parse_mode' => 'HTML',
+                'text' => 'Вы выбрали счетчики',
+                'reply_markup' => json_encode(array(
+                    'keyboard' => array(
+                        array(
+                            array(
+                                'text' => 'Записать информацию',
+                                'url' => '/chet_zapis',
+                            ),
+                            array(
+                                'text' => 'Вывести информацию',
+                                'url' => '/chet_output',
+                            )
+                        )
+                    ),
+                    'one_time_keyboard' => TRUE,
+                    'resize_keyboard' => TRUE,
+                ))
+            )
+        );
+        break;
+    case 'Записать информацию':
+        sendTelegram(
+            'sendMessage', 
+            array(
+                'chat_id' => $data['message']['chat']['id'],
+                'parse_mode' => 'HTML',
+                'text' => 'Какой показатель хотите записать?',
+                'reply_markup' => json_encode(array(
+                    'keyboard' => array(
+                        array(
+                            array(
+                                'text' => 'Горячая вода',
+                                'url' => '/chet_gv',
+                            ),
+                            array(
+                                'text' => 'Холодная вода',
+                                'url' => '/chet_hv',
+                            )
+                            array(
+                                'text' => 'Электричество',
+                                'url' => '/chet_el',
+                            )
+                        )
+                    ),
+                    'one_time_keyboard' => TRUE,
+                    'resize_keyboard' => TRUE,
+                ))
             )
         );
         break;
@@ -53,12 +100,12 @@ switch ($text) {
                     'keyboard' => array(
                         array(
                             array(
-                                'text' => 'Тестовая кнопка 1',
-                                'url' => 'YOUR BUTTON URL',
+                                'text' => 'счетчики',
+                                'url' => '/chet',
                             ),
                             array(
-                                'text' => 'Тестовая кнопка 2',
-                                'url' => 'YOUR BUTTON URL',
+                                'text' => 'другое',
+                                'url' => '/other',
                             ),
                         )
                     ),
