@@ -32,30 +32,36 @@ $lastname = $data['message']['from']['last_name'];
 $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
 
-//ответ на текст
-if (!empty($data['message']['text'])) {
-    sendTelegram(
-        'sendMessage', 
-        array(
-            'chat_id' => $data['message']['chat']['id'],
-            'text' => 'Привет, ' . $username . ''
-        )
-    );
-    sendTelegram(
-        'sendMessage', 
-        array(
-            'chat_id' => $admin,
-            'text' => 'Пользователь ' . $username . ' ' . $lastname . ' (@' . $nameid . ' -id' . $userid . ') оставил сообщение: ' . $otvet . ''
-        )
-    );
-    if ($data['message']['text'] == '/ipoteka') {
+
+switch ($text) {
+    case 'счетчики':
         sendTelegram(
             'sendMessage', 
             array(
                 'chat_id' => $data['message']['chat']['id'],
-                'text' => 'Выбран раздел ипотека'
+                'text' => 'Вы выбрали счетчики'
             )
         );
-    exit();	
-}
+        break;
+    default:
+        sendTelegram(
+            'sendMessage', 
+            array(
+                'chat_id' => $data['message']['chat']['id'],
+                'text' => 'Я не знаю такую команду, попробуй ещё раз',
+                'reply_markup' => array(
+                    'keyboard' => array(
+                            array(
+                            'text' => 'счетчики',
+                            'callback_data' => '/chet'
+                                ),
+                                array(
+                                    'text' => 'другое',
+                                    'callback_data' => '/other'
+                                ) 
+                                ),
+                    'resize_keyboard' => true
+                )
+            )
+        );
 }
