@@ -31,17 +31,7 @@ $username = $data['message']['from']['first_name'];
 $lastname = $data['message']['from']['last_name'];
 $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
-$default_keyboard2 = array(
-    array(
-      'text' => 'счетчики',
-      'callback_data' => '/chet'
-    ),
-    array(
-      'text' => 'другое',
-      'callback_data' => '/other'
-    )
-  );
-$default_keyboard ='{"keyboard":[[{"text":"1button","callback_data":"/about"},{"text":"2button","callback_data":"/ipoteka"},{"text":"3button","callback_data":"/contact"},{"text":"4button","callback_data":"/order"}]],"resize_keyboard":true}'
+
 switch ($text) {
     case 'счетчики':
         sendTelegram(
@@ -59,7 +49,22 @@ switch ($text) {
                 'chat_id' => $data['message']['chat']['id'],
                 'parse_mode' => 'HTML',
                 'text' => 'Я не знаю такую команду, попробуй ещё раз',
-                'reply_markup' => $default_keyboard
+                'reply_markup' => json_encode(array(
+                    'keyboard' => array(
+                        array(
+                            array(
+                                'text' => 'Тестовая кнопка 1',
+                                'url' => 'YOUR BUTTON URL',
+                            ),
+                            array(
+                                'text' => 'Тестовая кнопка 2',
+                                'url' => 'YOUR BUTTON URL',
+                            ),
+                        )
+                    ),
+                    'one_time_keyboard' => TRUE,
+                    'resize_keyboard' => TRUE,
+                ))
             )
         );
 }
