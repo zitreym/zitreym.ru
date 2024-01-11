@@ -2,9 +2,8 @@
 require("../header.php");
 ?>
 <section class="articles_page">
-
-
 <?
+require("./sql.php");
 $result = $mysqli->query("SELECT * FROM articles");
 $result = $result->fetch_all();
 foreach ($result as $row) {
