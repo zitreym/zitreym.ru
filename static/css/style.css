@@ -551,6 +551,7 @@ a.menu_button_login {
     position: absolute;
     bottom: 30px;
     right: 30px;
+    visibility: hidden;
 }
 @media (max-width: 1200px) {
 .start_title {

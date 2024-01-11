@@ -3,7 +3,6 @@
     <div class="skils_wrp">
     <h4 class="skils_title">Использую сейчас:</h4>
 <?
-require("../sql.php");
 $result = $mysqli->query("SELECT * FROM skils WHERE type = 1");
 $result = $result->fetch_all();
 foreach ($result as $row) {

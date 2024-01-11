@@ -1,3 +1,6 @@
+<?php
+require("../sql.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
