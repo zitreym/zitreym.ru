@@ -3,7 +3,7 @@ require("../header.php");
 ?>
 <section class="articles_page">
 <?
-include './sql.php';
+require("../../sql.php");
 $result = $mysqli->query("SELECT * FROM articles");
 $result = $result->fetch_all();
 foreach ($result as $row) {
