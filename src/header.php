@@ -26,7 +26,7 @@
                 <div class="menu_wrp">
                     <li class="menu_li"><a href="/src/draft" class="menu_txt">Обо мне</a></li>
                     <li class="menu_li"><a href="/src/draft" class="menu_txt">Проекты</a></li>
-                    <li class="menu_li"><a href="/src/draft" class="menu_txt">Статьи</a></li>
+                    <li class="menu_li"><a href="/src/articles" class="menu_txt">Статьи</a></li>
                     <li class="menu_li"><a href="/src/draft" class="menu_txt">Блог</a></li>
                     <li class="menu_li menu_li_last"><a href="#form" class="menu_txt menu_txt_last">Связаться</a></li>
                     <a href="#" class="menu_button_login"></a>
