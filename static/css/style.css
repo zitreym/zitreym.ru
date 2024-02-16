@@ -108,6 +108,7 @@ li {
     align-items: center;
     padding-bottom: 120px;
     justify-content: space-between;
+    top: ;
 }
 .skils_buble_txt {
     font-family: 'Montserrat', sans-serif;
@@ -122,6 +123,8 @@ li {
     width: 150px;
     height: 50px;
     border-radius: 10px;
+    top: -40px;
+    left: 180px;
 }
 .skils_img:hover + .skils_buble_box {
     display: block;
