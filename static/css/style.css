@@ -116,13 +116,13 @@ li {
     color: #000000;
 }
 .skils_buble_box {
-    display: block;
+    display: none;
     visibility: hidden;
     width: 100px;
     height: 100px;
 }
-.skils_img:hover .skils_buble_box {
-    visibility: visible;
+.skils_img:hover + .skils_buble_box {
+    display: block;
 }
 .start {
     display: flex;
