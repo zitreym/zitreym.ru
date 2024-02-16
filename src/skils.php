@@ -23,6 +23,9 @@ foreach ($result as $row) {
 ?>
 <div class="skils_box">
 <img src="/static/img/skils/<? echo $row[2]; ?>" alt="<? echo $row[1]; ?>" class="skils_img">
+<div class="skils_buble_box">
+    <p class="skils_buble_txt">Описание скила</p>
+</div>
 <p class="skils_txt"><? echo $row[1]; ?></p>
 </div>
 <?

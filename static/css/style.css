@@ -108,6 +108,19 @@ li {
     padding-bottom: 120px;
     justify-content: space-between;
 }
+.skils_buble_txt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+}
+.skils_buble_box {
+    display: block;
+    visibility: hidden;
+    width: 100px;
+    height: 100px;
+}
 .start {
     display: flex;
     align-items: center;
