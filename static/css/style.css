@@ -63,6 +63,8 @@ li {
     margin: 40px 0;
 }
 .skils_img {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     width: 100px;
     height: 100px;
 }
@@ -113,19 +115,21 @@ li {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-align: center;
-    color: #000000;
+    color: #ffffff;
 }
 .skils_buble_box {
+    
+    z-index: 1;
     display: none;
     position: absolute;
-    background-color: #8b8b8b;
-    width: 150px;
-    height: 50px;
+    background: linear-gradient(90deg, #292929,#4f4f4f,#4d4d4d);
+    padding: 10px 20px;
     border-radius: 10px;
     top: -40px;
     left: 180px;
 }
 .skils_img:hover + .skils_buble_box {
+    opacity: 1;
     display: block;
 }
 .start {
