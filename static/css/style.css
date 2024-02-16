@@ -74,6 +74,7 @@ li {
     color: #000000;
 }
 .skils_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,16 +111,17 @@ li {
 }
 .skils_buble_txt {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 16px;
     text-align: center;
     color: #000000;
 }
 .skils_buble_box {
     display: none;
-    visibility: hidden;
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    background-color: #8b8b8b;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
 }
 .skils_img:hover + .skils_buble_box {
     display: block;
