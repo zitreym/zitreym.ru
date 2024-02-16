@@ -121,6 +121,9 @@ li {
     width: 100px;
     height: 100px;
 }
+.skils_img:hover .skils_buble_box {
+    visibility: visible;
+}
 .start {
     display: flex;
     align-items: center;
