@@ -126,10 +126,12 @@ li {
     border-radius: 10px;
     top: -40px;
     left: 180px;
+    visibility: hidden;
 }
 .skils_img:hover + .skils_buble_box {
     opacity: 1;
     display: block;
+    visibility: visible;
 }
 .start {
     display: flex;
