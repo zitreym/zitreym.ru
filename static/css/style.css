@@ -592,7 +592,7 @@ a.menu_button_login {
 .section_title {
     padding: 30px 60px;
     font-size: 28px;
-    border-size: #000 solid 6px;
+    border: #000 solid 6px;
 }
 .career_box {
     width: 800px;
