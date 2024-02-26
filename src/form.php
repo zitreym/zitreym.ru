@@ -21,7 +21,8 @@
             $telephone_user = trim($telephone_user);
             $message_user = trim($message_user);
             if ($telephone_user > 1) {
-$data = array( 'name' => $name_user, 'text' => $message_user, 'phone' => $telephone_user, 'mail' => $email_user ); 
+$data = array( 'name' => $name_user, 'text' => $message_user, 'phone' => $telephone_user, 'mail' => $email_user );
+console_log($data);
 $query = $db->prepare("INSERT INTO $db_table (name, text, phone, mail) values (:name, :text, :phone, :mail)");
 $query->execute($data);
             }
