@@ -1,4 +1,6 @@
 <section id="form" class="form">
+    <?php if (1 = 1) {
+        console_log('hello');}?>
     <h3 class="section_title">Связаться</h3>
     <p class="form_description">Через данную форму вы можете связаться со мной, оставить заявку на получение какой-либо услуги, а также поделиться обратной связью</p>
     <div class="span_section"></div>
