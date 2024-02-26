@@ -1,6 +1,4 @@
 <section id="form" class="form">
-    <?php if (1 = 1) {
-        console_log('hello');}?>
     <h3 class="section_title">Связаться</h3>
     <p class="form_description">Через данную форму вы можете связаться со мной, оставить заявку на получение какой-либо услуги, а также поделиться обратной связью</p>
     <div class="span_section"></div>
@@ -24,8 +22,7 @@
             $message_user = trim($message_user);
             if ($telephone_user > 1) {
 $data = array( 'name' => $name_user, 'text' => $message_user, 'phone' => $telephone_user, 'mail' => $email_user );
-console_log($data);
-$query = $db->prepare("INSERT INTO $db_table (name, text, phone, mail) values (:name, :text, :phone, :mail)");
+$query = $mysqli->prepare("INSERT INTO $db_table (name, text, phone, mail) values (:name, :text, :phone, :mail)");
 $query->execute($data);
             }
              ?>" method="post">
