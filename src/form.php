@@ -21,19 +21,15 @@
             $telephone_user = trim($telephone_user);
             $message_user = trim($message_user);
             if ($telephone_user > 1) {
-             mail("desp_xamv@mail.ru", "Заявка с сайта", "Имя:".$name_user.". E-mail: ".$email_user.". Телефон: ".$telephone_user.". Сообщение: ".$message_user ,"From: desp_xamv@mail.ru \r\n");
-             // Собираем данные для запроса
 $data = array( 'name' => $name_user, 'text' => $message_user, 'phone' => $telephone_user, 'mail' => $email_user ); 
-// Подготавливаем SQL-запрос
 $query = $db->prepare("INSERT INTO $db_table (name, text, phone, mail) values (:name, :text, :phone, :mail)");
-// Выполняем запрос с данными
 $query->execute($data);
             }
              ?>" method="post">
-        <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*">
-        <input type="text" class="form_input" placeholder="ВАША ПОЧТА*">
-        <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА">
-        <textarea class="form_input form_message" placeholder="ВАШЕ СООБЩЕНИЕ*"></textarea>
+        <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
+        <input type="text" class="form_input" placeholder="ВАША ПОЧТА*" name="email_user" required>
+        <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="telephone_user" required>
+        <textarea class="form_input form_message" placeholder="ВАШЕ СООБЩЕНИЕ*" name="message_user" required></textarea>
         <input type="submit" value="ОТПРАВИТЬ" class="form_button">
     </form>
     <?php
