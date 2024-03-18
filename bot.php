@@ -1,5 +1,6 @@
 <?php
- 
+ require("function_bot/function.php");
+
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
  
@@ -8,20 +9,6 @@ if (empty($data['message']['chat']['id'])) {
 }
  
 define('TOKEN', '6933909374:AAHGAiNH6kb8hovWYho_wulZrKmf22eFE_I');
- 
-// Функция вызова методов API.
-function sendTelegram($method, $response)
-{
-	$ch = curl_init('https://api.telegram.org/bot' . TOKEN . '/' . $method);  
-	curl_setopt($ch, CURLOPT_POST, 1);  
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $response);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_HEADER, false);
-	$res = curl_exec($ch);
-	curl_close($ch);
- 
-	return $res;
-}
 
 //переменные
 $otvet = var_export($data, true);
@@ -34,30 +21,7 @@ $text = $data['message']['text'];
 
 switch ($text) {
     case 'счетчики':
-        sendTelegram(
-            'sendMessage', 
-            array(
-                'chat_id' => $data['message']['chat']['id'],
-                'parse_mode' => 'HTML',
-                'text' => 'Вы выбрали счетчики',
-                'reply_markup' => json_encode(array(
-                    'keyboard' => array(
-                        array(
-                            array(
-                                'text' => 'Записать информацию',
-                                'url' => '/chet_zapis',
-                            ),
-                            array(
-                                'text' => 'Вывести информацию',
-                                'url' => '/chet_output',
-                            ),
-                        )
-                    ),
-                    'one_time_keyboard' => TRUE,
-                    'resize_keyboard' => TRUE,
-                ))
-            )
-        );
+        schetchiki($data['message']['chat']['id']);
         break;
     case 'Записать информацию':
         sendTelegram(
